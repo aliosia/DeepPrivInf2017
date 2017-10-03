@@ -1,0 +1,35 @@
+# The train/test net protocol buffer definition
+net: "train.prototxt"
+# 45000 training image, 14685 test image, batchsize for both = 10
+# We have test batch size 10 and 1500 test iterations, covering the full 14,685 testing images.
+test_iter: 300
+# Carry out testing every 1000 training iterations.
+test_interval: 500
+
+#solver_type: ADAM
+momentum: 0.9
+momentum2: 0.999
+delta: 0.00000001
+lr_policy: "fixed"
+base_lr: 0.0001
+
+# Display every 500 iterations
+display: 100
+# The maximum number of iterations (near 10 epochs)
+max_iter: 45000
+# snapshot intermediate results
+snapshot: 1000
+snapshot_prefix: "caffemodels/"
+# solver mode: CPU or GPU
+solver_mode: GPU
+
+
+
+# The base learning rate, momentum and the weight decay of the network.
+#base_lr: 0.0001
+#weight_decay: 1
+# The learning rate policy
+#lr_policy: "fixed"
+#gamma: 0.5
+#power: 0.5
+#stepsize: 10000
